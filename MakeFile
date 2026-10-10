@@ -5,8 +5,8 @@ CXXFLAGS = -std=c++17 -mwindows -static
 all: build/HelpGUI.exe
 
 build/HelpGUI.exe: src/main.cpp
-	@if not exist build mkdir build
+	@mkdir -p build
 	$(CXX) $(CXXFLAGS) src/main.cpp -o build/HelpGUI.exe
 
 clean:
-	@if exist build rmdir /s /q build
+	@rm -rf build
